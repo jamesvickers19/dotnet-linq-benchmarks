@@ -34,7 +34,7 @@ namespace DotnetLinqBenchmarks
     {
         protected Customer[] customers;
 
-        [Params(100_000, 200_000, 500_000, 1_000_000, 2_000_000, 5_000_000, 10_000_000, 50_000_000, 100_000_000)]
+        [Params(10_000, 50_000, 100_000, 200_000, 300_000, 400_000, 500_000, 600_000, 700_000, 800_000, 900_000, 1_000_000)]
         public int size;
 
         [IterationSetup]

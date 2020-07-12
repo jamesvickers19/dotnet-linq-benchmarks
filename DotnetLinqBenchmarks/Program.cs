@@ -127,7 +127,7 @@ namespace DotnetLinqBenchmarks
         [Benchmark(Baseline = true, Description = "for")]
         public List<Customer> CustomersToAgeInDays_For()
         {
-            var customersWithAgeInDays = new List<Customer>();
+            var customersWithAgeInDays = new List<Customer>(customers.Length);
             for (int i = 0; i < customers.Length; i++)
             {
                 customersWithAgeInDays.Add(ToAgeInDays(customers[i]));
@@ -138,7 +138,7 @@ namespace DotnetLinqBenchmarks
         [Benchmark(Description = "foreach")]
         public List<Customer> CustomersToAgeInDays_ForEach()
         {
-            var customersWithAgeInDays = new List<Customer>();
+            var customersWithAgeInDays = new List<Customer>(customers.Length);
             foreach (var c in customers)
             {
                 customersWithAgeInDays.Add(ToAgeInDays(c));

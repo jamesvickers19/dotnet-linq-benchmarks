@@ -79,7 +79,10 @@ namespace DotnetLinqBenchmarks
         }
 
         [Benchmark(Description = "LINQ count")]
-        public int CountMinorCustomers_LINQ() => customers.Count(c => c.IsMinor);
+        public int CountMinorCustomers_LINQ_SelectCount() => customers.Select(c => c.IsMinor).Count();
+
+        [Benchmark(Description = "LINQ count pred")]
+        public int CountMinorCustomers_LINQ_CountPredicate() => customers.Count(c => c.IsMinor);
     }
 
     public class FilterExperiments : Experiments

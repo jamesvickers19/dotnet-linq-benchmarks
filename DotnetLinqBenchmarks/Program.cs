@@ -61,7 +61,7 @@ namespace DotnetLinqBenchmarks
                     count++;
                 }
             }
-            return count++;
+            return count;
         }
 
         [Benchmark(Description = "foreach")]
@@ -75,7 +75,7 @@ namespace DotnetLinqBenchmarks
                     count++;
                 }
             }
-            return count++;
+            return count;
         }
 
         [Benchmark(Description = "LINQ count")]
